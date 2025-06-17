@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="resume-container">
+    <h1>{{ resume.name }}</h1>
+    <p><strong>Email:</strong> {{ resume.email }}</p>
+    <p><strong>Phone:</strong> {{ resume.phone }}</p>
+    <p><strong>Address:</strong> {{ resume.address }}</p>
+    <hr>
+    <h2>Education</h2>
+    <p>{{ resume.education }}</p>
+    <h2>Experience</h2>
+    <p>{{ resume.experience }}</p>
+    <h2>Skills</h2>
+    <p>{{ resume.skills }}</p>
+    <br>
+    <a href="{{ url_for('download', resume_id=resume.id) }}">Download PDF</a>
+  </div>
+</body>
+</html>
